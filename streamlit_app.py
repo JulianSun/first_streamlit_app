@@ -7,9 +7,11 @@ streamlit.text('Hard-Boiled Free-Range Egg')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 import pandas
 
-streamlit.header('Breakfast Menu')
+streamlit.header('Fruityvice Fruit Advice!')
+fruit_choice = streamlit.text_input('what fruit would you like information about?','Kiwi)
+streamlit.write('The user enterer', fruit_choice)
 import requests
-fruityvice_response = requests.get("http://fruityvice.com/api/furit/" + "kiwi")
+fruityvice_response = requests.get("http://fruityvice.com/api/fruit"+ fruit_choice)
 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
