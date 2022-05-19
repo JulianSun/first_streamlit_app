@@ -9,7 +9,7 @@ import pandas
 
 streamlit.header('Breakfast Menu')
 import requests
-fruityvice_response = requests.get("http://fruityvice.com/api/furit/" + kiwi")
+fruityvice_response = requests.get("http://fruityvice.com/api/furit/" + "kiwi")
 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
