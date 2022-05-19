@@ -10,4 +10,4 @@ import pandas
 streamlit.header('Breakfast Menu')
 import requests
 fruityvice_response = requests.get("http://fruityvice.com/api/furit/watermelon")
-steamlit.text(fruityvice_response.json())
+streamlit.text(fruityvice_response.json())
